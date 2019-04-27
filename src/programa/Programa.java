@@ -95,20 +95,30 @@ public class Programa {
                     if (situacaoApolice == 3) {
                         situacao = SituacaoApolice.QUITADA;
                     }
-                    if (situacaoApolice == 3) {
+                    if (situacaoApolice == 4) {
                         situacao = SituacaoApolice.PARCELADA;
                     }
                     sc.nextLine();
                     System.out.println("Seguradora: ");
                     String seguradora = sc.nextLine();
-                    
-                    veiculoSegurado.add(
+
+                    /*veiculoSegurado.add(
                             new VeiculoSegurado(kilometragem, placa,
                                     new Cliente(endereco, telefone, nome, dataAtual),
                                     new Modelo(descricao),
                                     new Apolice(numero, dataAtual, dataAtual, situacao, seguradora)
-                            ));
+                            ));*/
+                    Cliente cli = new Cliente(endereco, telefone, nome, dataAtual);
+                    for (VeiculoSegurado veiculoSegurado1 : veiculoSegurado) {
+                        if (cliente.equals(veiculoSegurado1.getCliente())) {
 
+                            veiculoSegurado.add(new VeiculoSegurado(kilometragem, placa, cli, new Modelo(descricao),
+                                    new Apolice(numero, dataAtual, dataAtual, situacao, seguradora)));
+                        }
+                        else{
+                            
+                        }
+                    }
                     break;
 
                 case 3:
@@ -164,18 +174,15 @@ public class Programa {
                             sc.nextLine();
                             System.out.println("Seguradora: ");
                             seguradora = sc.nextLine();
-                            
+
                             /*cliente.add(new Cliente(endereco, telefone, 
                                     new VeiculoSegurado(kilometragem, placa, cliente, new Modelo(descricao),
                                     new Apolice(numero, dataAtual, dataAtual, situacao, seguradora)), nome, dataAtual));*/
-                            
                             veiculoSegurado.add(new VeiculoSegurado(kilometragem, placa,
                                     new Modelo(descricao),
                                     new Apolice(numero, dataAtual, dataAtual, situacao, seguradora)));
-                            
-                            cliente.add(new Cliente(endereco, telefone, veiculoSegurado, nome, dataAtual));
 
-                            
+                            cliente.add(new Cliente(endereco, telefone, veiculoSegurado, nome, dataAtual));
 
                         }
                     } else {
