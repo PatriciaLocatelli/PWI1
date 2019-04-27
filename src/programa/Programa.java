@@ -6,9 +6,7 @@ import classes.Modelo;
 import classes.Usuario;
 import classes.VeiculoSegurado;
 import enums.SituacaoApolice;
-import java.time.Instant;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.LinkedList;
 import java.util.Locale;
 import java.util.Scanner;
@@ -102,23 +100,13 @@ public class Programa {
                     System.out.println("Seguradora: ");
                     String seguradora = sc.nextLine();
 
-                    /*veiculoSegurado.add(
+                    veiculoSegurado.add(
                             new VeiculoSegurado(kilometragem, placa,
                                     new Cliente(endereco, telefone, nome, dataAtual),
                                     new Modelo(descricao),
                                     new Apolice(numero, dataAtual, dataAtual, situacao, seguradora)
-                            ));*/
-                    Cliente cli = new Cliente(endereco, telefone, nome, dataAtual);
-                    for (VeiculoSegurado veiculoSegurado1 : veiculoSegurado) {
-                        if (cliente.equals(veiculoSegurado1.getCliente())) {
+                            ));
 
-                            veiculoSegurado.add(new VeiculoSegurado(kilometragem, placa, cli, new Modelo(descricao),
-                                    new Apolice(numero, dataAtual, dataAtual, situacao, seguradora)));
-                        }
-                        else{
-                            
-                        }
-                    }
                     break;
 
                 case 3:
@@ -168,7 +156,7 @@ public class Programa {
                             if (situacaoApolice == 3) {
                                 situacao = SituacaoApolice.QUITADA;
                             }
-                            if (situacaoApolice == 3) {
+                            if (situacaoApolice == 4) {
                                 situacao = SituacaoApolice.PARCELADA;
                             }
                             sc.nextLine();
