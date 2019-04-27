@@ -4,22 +4,12 @@ public class VeiculoSegurado {
 
     private double kilometragem;
     private String placa;
-    private Cliente cliente;
     private Modelo modelo;
     private Apolice apolice;
 
     private static int contador = 0;
 
     public VeiculoSegurado() {
-    }
-
-    public VeiculoSegurado(double kilometragem, String placa, Cliente cliente, Modelo modelo, Apolice apolice) {
-        this.kilometragem = kilometragem;
-        this.placa = placa;
-        this.cliente = cliente;
-        this.modelo = modelo;
-        this.apolice = apolice;
-        contador++;
     }
 
     public VeiculoSegurado(double kilometragem, String placa, Modelo modelo, Apolice apolice) {
@@ -46,14 +36,6 @@ public class VeiculoSegurado {
         this.placa = placa;
     }
 
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
     public Modelo getModelo() {
         return modelo;
     }
@@ -77,9 +59,7 @@ public class VeiculoSegurado {
     @Override
     public String toString() {
         String aux = "";
-        if (getCliente() == null) {
-            aux = " Cliente não cadastrado \n";
-        } 
+        
         if (getModelo() == null) {
            aux += " Modelo não cadastrado \n";
         } 

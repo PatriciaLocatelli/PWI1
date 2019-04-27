@@ -19,9 +19,9 @@ public class Programa {
 
         LocalDate dataAtual = LocalDate.now();
 
-        LinkedList<Usuario> usuario = new LinkedList<>();
-        LinkedList<Cliente> cliente = new LinkedList<>();
-        LinkedList<VeiculoSegurado> veiculoSegurado = new LinkedList<>();
+        LinkedList<Usuario> listaDeUsuarios = new LinkedList<>();
+        LinkedList<Cliente> listaDeClientes = new LinkedList<>();
+        LinkedList<VeiculoSegurado> ListaDeVeiculoSegurados = new LinkedList<>();
 
         while (true) {
             System.out.println("===BEM VINDO AO PROGRAMA DE CADASTRO DE VEÍCULOS===");
@@ -49,7 +49,7 @@ public class Programa {
                     System.out.print("Digite a senha: ");
                     String senha = sc.nextLine();
 
-                    usuario.add(new Usuario(identificador, senha, nome, dataAtual));
+                    listaDeUsuarios.add(new Usuario(identificador, senha, nome, dataAtual));
 
                     break;
                 case 2:
@@ -100,9 +100,8 @@ public class Programa {
                     System.out.println("Seguradora: ");
                     String seguradora = sc.nextLine();
 
-                    veiculoSegurado.add(
+                    ListaDeVeiculoSegurados.add(
                             new VeiculoSegurado(kilometragem, placa,
-                                    new Cliente(endereco, telefone, nome, dataAtual),
                                     new Modelo(descricao),
                                     new Apolice(numero, dataAtual, dataAtual, situacao, seguradora)
                             ));
@@ -163,18 +162,14 @@ public class Programa {
                             System.out.println("Seguradora: ");
                             seguradora = sc.nextLine();
 
-                            /*cliente.add(new Cliente(endereco, telefone, 
-                                    new VeiculoSegurado(kilometragem, placa, cliente, new Modelo(descricao),
-                                    new Apolice(numero, dataAtual, dataAtual, situacao, seguradora)), nome, dataAtual));*/
-                            veiculoSegurado.add(new VeiculoSegurado(kilometragem, placa,
+                            ListaDeVeiculoSegurados.add(new VeiculoSegurado(kilometragem, placa,
                                     new Modelo(descricao),
                                     new Apolice(numero, dataAtual, dataAtual, situacao, seguradora)));
 
-                            cliente.add(new Cliente(endereco, telefone, veiculoSegurado, nome, dataAtual));
-
+                            listaDeClientes.add(new Cliente(endereco, telefone, ListaDeVeiculoSegurados, nome, dataAtual));
                         }
                     } else {
-                        cliente.add(new Cliente(endereco, telefone, nome, dataAtual));
+                        listaDeClientes.add(new Cliente(endereco, telefone, nome, dataAtual));
                     }
 
                     break;
@@ -182,8 +177,8 @@ public class Programa {
                 case 4:
                     System.out.println("========CLIENTES CADASTRADOS===========");
 
-                    for (Cliente client : cliente) {
-                        if (client != null) {
+                    for (Cliente client : listaDeClientes) {
+                        if (listaDeClientes != null) {
                             System.out.println(client.toString());
                         }
                     }
@@ -193,8 +188,8 @@ public class Programa {
 
                 case 5:
                     System.out.println("========VEICULOS CADASTRADOS CADASTRADOS===========");
-                    for (VeiculoSegurado veiculo : veiculoSegurado) {
-                        if (veiculoSegurado != null) {
+                    for (VeiculoSegurado veiculo : ListaDeVeiculoSegurados) {
+                        if (ListaDeVeiculoSegurados != null) {
                             System.out.println(veiculo.toString());
                         }
                     }
@@ -207,8 +202,8 @@ public class Programa {
 
                     System.out.println("========USUÁRIOS CADASTRADOS===========");
 
-                    for (Usuario user : usuario) {
-                        if (usuario != null) {
+                    for (Usuario user : listaDeUsuarios) {
+                        if (listaDeUsuarios != null) {
                             System.out.println(user.toString());
                         }
 
