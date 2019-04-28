@@ -67,43 +67,42 @@ public class Programa {
                             System.out.println("Cliente não encontrado");
                         }
                     }
-
-                    System.out.println("==DADOS SOBRE O VEÍCULO==");
-                    System.out.print("Digite a kilometragem");
-                    double kilometragem = sc.nextDouble();
-                    sc.nextLine();
-                    System.out.print("Digite a placa");
-                    String placa = sc.nextLine();
-
-                    System.out.println("==DADOS SOBRE O MODELO==");
-                    System.out.print("Digite a descrição do modelo: ");
-                    String descricao = sc.nextLine();
-
-                    System.out.println("==DADOS SOBRE A APÓLICE==");
-                    System.out.print("Numero: ");
-                    int numero = sc.nextInt();
-
-                    System.out.println("Situação da apólice: \n1 - Em negociação 2 - Cancelada 3 - Quitada ou 4 - Parcelada: ");
-                    int situacaoApolice = sc.nextInt();
-
-                    SituacaoApolice situacao = null;
-                    if (situacaoApolice == 1) {
-                        situacao = SituacaoApolice.EMNEGOCIACAO;
-                    }
-                    if (situacaoApolice == 2) {
-                        situacao = SituacaoApolice.CANCELADA;
-                    }
-                    if (situacaoApolice == 3) {
-                        situacao = SituacaoApolice.QUITADA;
-                    }
-                    if (situacaoApolice == 4) {
-                        situacao = SituacaoApolice.PARCELADA;
-                    }
-                    sc.nextLine();
-                    System.out.println("Seguradora: ");
-                    String seguradora = sc.nextLine();
-
                     if (clienteEncontrado != null) {
+                        System.out.println("==DADOS SOBRE O VEÍCULO==");
+                        System.out.print("Digite a kilometragem");
+                        double kilometragem = sc.nextDouble();
+                        sc.nextLine();
+                        System.out.print("Digite a placa");
+                        String placa = sc.nextLine();
+
+                        System.out.println("==DADOS SOBRE O MODELO==");
+                        System.out.print("Digite a descrição do modelo: ");
+                        String descricao = sc.nextLine();
+
+                        System.out.println("==DADOS SOBRE A APÓLICE==");
+                        System.out.print("Numero: ");
+                        int numero = sc.nextInt();
+
+                        System.out.println("Situação da apólice: \n1 - Em negociação 2 - Cancelada 3 - Quitada ou 4 - Parcelada: ");
+                        int situacaoApolice = sc.nextInt();
+
+                        SituacaoApolice situacao = null;
+                        if (situacaoApolice == 1) {
+                            situacao = SituacaoApolice.EMNEGOCIACAO;
+                        }
+                        if (situacaoApolice == 2) {
+                            situacao = SituacaoApolice.CANCELADA;
+                        }
+                        if (situacaoApolice == 3) {
+                            situacao = SituacaoApolice.QUITADA;
+                        }
+                        if (situacaoApolice == 4) {
+                            situacao = SituacaoApolice.PARCELADA;
+                        }
+                        sc.nextLine();
+                        System.out.println("Seguradora: ");
+                        String seguradora = sc.nextLine();
+
                         VeiculoSegurado veiculo = new VeiculoSegurado(
                                 kilometragem,
                                 placa,
@@ -111,6 +110,8 @@ public class Programa {
                                 new Apolice(numero, dataAtual, dataAtual, situacao, seguradora)
                         );
                         clienteEncontrado.getVeiculoSegurado().add(veiculo);
+                    } else {
+                        System.out.println("Cliente não encontrado");
                     }
 
                     break;
@@ -138,23 +139,23 @@ public class Programa {
 
                             System.out.println("==DADOS SOBRE O VEÍCULO==");
                             System.out.print("Digite a kilometragem");
-                            kilometragem = sc.nextDouble();
+                            double kilometragem = sc.nextDouble();
                             sc.nextLine();
                             System.out.print("Digite a placa");
-                            placa = sc.nextLine();
+                            String placa = sc.nextLine();
 
                             System.out.println("==DADOS SOBRE O MODELO==");
                             System.out.print("Digite a descrição do modelo: ");
-                            descricao = sc.nextLine();
+                            String descricao = sc.nextLine();
 
                             System.out.println("==DADOS SOBRE A APÓLICE==");
                             System.out.print("Numero: ");
-                            numero = sc.nextInt();
+                            int numero = sc.nextInt();
 
                             System.out.println("Situação da apólice: \n1 - Em negociação 2 - Cancelada 3 - Quitada ou 4 - Parcelada: ");
-                            situacaoApolice = sc.nextInt();
+                            int situacaoApolice = sc.nextInt();
 
-                            situacao = null;
+                            SituacaoApolice situacao = null;
                             if (situacaoApolice == 1) {
                                 situacao = SituacaoApolice.EMNEGOCIACAO;
                             }
@@ -169,7 +170,7 @@ public class Programa {
                             }
                             sc.nextLine();
                             System.out.println("Seguradora: ");
-                            seguradora = sc.nextLine();
+                            String seguradora = sc.nextLine();
 
                             listaDeVeiculoSegurados.add(new VeiculoSegurado(kilometragem, placa,
                                     new Modelo(descricao),

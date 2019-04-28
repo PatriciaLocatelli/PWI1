@@ -59,6 +59,6 @@ public class Cliente extends Pessoa {
         if (getVeiculoSegurado() == null) {
             veiculos =  "Nenhum veículo cadastrado";
         } 
-        return super.toString() + " Endereço: " + getEndereco() + " Telefone : " + getTelefone() + "Veículos :" + veiculos;
+        return super.toString() + "\n" +" Endereço: " + getEndereco() + "\n" + " Telefone : " + getTelefone() +  "\n" +"Veículos :" + veiculos;
     }
 }
