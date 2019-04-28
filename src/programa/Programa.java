@@ -21,7 +21,7 @@ public class Programa {
 
         LinkedList<Usuario> listaDeUsuarios = new LinkedList<>();
         LinkedList<Cliente> listaDeClientes = new LinkedList<>();
-        LinkedList<VeiculoSegurado> listaDeVeiculoSegurados = new LinkedList<>();
+        LinkedList<VeiculoSegurado> listaDeVeiculoSegurados;
 
         while (true) {
             System.out.println("===BEM VINDO AO PROGRAMA DE CADASTRO DE VEÍCULOS===");
@@ -53,7 +53,7 @@ public class Programa {
 
                     break;
                 case 2:
-
+                    listaDeVeiculoSegurados = new LinkedList<>();
                     sc.nextLine();
                     System.out.println("==DADOS SOBRE O VEÍCULO==");
                     System.out.print("Digite a kilometragem");
@@ -99,6 +99,7 @@ public class Programa {
                     break;
 
                 case 3:
+                    listaDeVeiculoSegurados = new LinkedList<>();
                     sc.nextLine();
 
                     System.out.println("==DADOS SOBRE O CLIENTE==");
@@ -181,13 +182,11 @@ public class Programa {
 
                 case 5:
                     System.out.println("========VEICULOS CADASTRADOS CADASTRADOS===========");
-                    if (listaDeVeiculoSegurados.isEmpty()) {
-                        System.out.println("Nenhum Veículo cadastrado");
-                    } else {
-                        for (VeiculoSegurado veiculos : listaDeVeiculoSegurados) {
+
+                    for (Cliente clientes : listaDeClientes) {
+                        for (VeiculoSegurado veiculos : clientes.getVeiculoSegurado()) {
                             System.out.println(veiculos.toString());
                         }
-
                     }
 
                     System.out.println("Foram Cadastrados = " + VeiculoSegurado.getContador());
