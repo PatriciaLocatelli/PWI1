@@ -62,10 +62,16 @@ public class VeiculoSegurado {
         
         if (getModelo() == null) {
            aux += " Modelo não cadastrado \n";
-        } 
+        }
+        else{
+            aux = "Modelo: " + getModelo() + "\n";
+        }
         if (getApolice() == null) {
             aux += " Apolice não cadastrada \n";
-        } 
+        }
+        else{
+            aux = "Apolice: " + getApolice() + "\n";
+        }
         return "Kilometragem: " + getKilometragem() + " Placa: " + getPlaca() + "\n"
                     + aux;
     
