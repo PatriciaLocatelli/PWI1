@@ -111,10 +111,11 @@ public class Programa {
 
                     System.out.print("Digite o telefone: ");
                     String telefone = sc.nextLine();
-
+                    listaDeClientes.add(new Cliente(endereco, telefone, listaDeVeiculoSegurados, nome, dataAtual));
+                    
                     System.out.print("Quantos veículos deseja cadastrar? ");
                     int qtd = sc.nextInt();
-
+                    
                     if (qtd != 0) {
                         for (int i = 0; i < qtd; i++) {
 
@@ -157,7 +158,7 @@ public class Programa {
                                     new Modelo(descricao),
                                     new Apolice(numero, dataAtual, dataAtual, situacao, seguradora)));
 
-                            listaDeClientes.add(new Cliente(endereco, telefone, listaDeVeiculoSegurados, nome, dataAtual));
+                            
                         }
                     } else {
                         System.out.println("Você precisa cadastrar um veículo");
