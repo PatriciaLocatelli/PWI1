@@ -34,9 +34,7 @@ public class Usuario extends Pessoa {
 
     @Override
     public String toString() {
-        return super.toString() + " Identificador : " + getIdentificador(); 
+        return super.toString() + "\n " + "Identificador : " + getIdentificador();
     }
-    
-    
 
 }

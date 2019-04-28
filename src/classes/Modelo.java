@@ -23,6 +23,5 @@ public final class Modelo {
     public String toString() {
         return "Descrição: " + getDescricao();
     }
-    
-    
+
 }

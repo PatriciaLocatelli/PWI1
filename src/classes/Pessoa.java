@@ -35,7 +35,7 @@ public abstract class Pessoa {
     @Override
     public String toString() {
        DateTimeFormatter padraoData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-       return "Nome: " + getNome() + " Data de Nascimento: " + getDataNascimento().format(padraoData);
+       return "Nome: " + getNome() + "\n " + "Data de Nascimento: " + getDataNascimento().format(padraoData);
     }
 
 }

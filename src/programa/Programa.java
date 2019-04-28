@@ -63,8 +63,6 @@ public class Programa {
                     for (Cliente cliente : listaDeClientes) {
                         if (cliente.getNome().equalsIgnoreCase(nomeCliente)) {
                             clienteEncontrado = cliente;
-                        } else {
-                            System.out.println("Cliente não encontrado");
                         }
                     }
                     if (clienteEncontrado != null) {

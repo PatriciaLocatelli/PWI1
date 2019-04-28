@@ -68,8 +68,8 @@ public class Apolice {
     @Override
     public String toString() {
         DateTimeFormatter padraoData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        return "Numero: " + getNumero() + " Data :" + getData().format(padraoData) + " Data de Validade: " 
-                + getDataValidade().format(padraoData) + " Situação: " + getSituacao() + " Seguradora: " +getSeguradora();
+        return "Numero: " + getNumero() + "\n " + "Data :" + getData().format(padraoData) + "\n " +"Data de Validade: " 
+                + getDataValidade().format(padraoData) + "\n " +"Situação: " + getSituacao() + "\n " +"Seguradora: " +getSeguradora();
     }
     
     

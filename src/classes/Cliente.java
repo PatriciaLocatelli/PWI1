@@ -19,12 +19,6 @@ public class Cliente extends Pessoa {
         this.veiculoSegurado = veiculoSegurado;
     }
 
-    public Cliente(String endereco, String telefone, String nome, LocalDate dataNascimento) {
-        super(nome, dataNascimento);
-        this.endereco = endereco;
-        this.telefone = telefone;
-    }
-
     public String getEndereco() {
         return endereco;
     }
@@ -53,12 +47,13 @@ public class Cliente extends Pessoa {
     public String toString() {
         String veiculos = "";
         for (VeiculoSegurado veiculoSegurado1 : veiculoSegurado) {
-            if(veiculoSegurado1 != null)
+            if (veiculoSegurado1 != null) {
                 veiculos += veiculoSegurado1.toString() + "\n";
+            }
         }
         if (getVeiculoSegurado() == null) {
-            veiculos =  "Nenhum veículo cadastrado";
-        } 
-        return super.toString() + "\n" +" Endereço: " + getEndereco() + "\n" + " Telefone : " + getTelefone() +  "\n" +"Veículos :" + veiculos;
+            veiculos = "Nenhum veículo cadastrado";
+        }
+        return super.toString() + "\n" + "Endereço: " + getEndereco() + "\n" + "Telefone : " + getTelefone() + "\n" + "Veículos :" + veiculos;
     }
 }

@@ -72,7 +72,7 @@ public class VeiculoSegurado {
         else{
             aux = "Apolice: " + getApolice() + "\n";
         }
-        return "Kilometragem: " + getKilometragem() + " Placa: " + getPlaca() + "\n"
+        return "Kilometragem: " +"\n " + getKilometragem() + "Placa: " + getPlaca() + "\n"
                     + aux;
     
     }
