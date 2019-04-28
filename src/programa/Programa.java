@@ -53,8 +53,21 @@ public class Programa {
 
                     break;
                 case 2:
-                    listaDeVeiculoSegurados = new LinkedList<>();
                     sc.nextLine();
+
+                    System.out.println("==Informe o nome do Cliente==");
+                    System.out.print("Cliente: ");
+                    String nomeCliente = sc.nextLine();
+
+                    Cliente clienteEncontrado = null;
+                    for (Cliente cliente : listaDeClientes) {
+                        if (cliente.getNome().equalsIgnoreCase(nomeCliente)) {
+                            clienteEncontrado = cliente;
+                        } else {
+                            System.out.println("Cliente não encontrado");
+                        }
+                    }
+
                     System.out.println("==DADOS SOBRE O VEÍCULO==");
                     System.out.print("Digite a kilometragem");
                     double kilometragem = sc.nextDouble();
@@ -90,11 +103,15 @@ public class Programa {
                     System.out.println("Seguradora: ");
                     String seguradora = sc.nextLine();
 
-                    listaDeVeiculoSegurados.add(
-                            new VeiculoSegurado(kilometragem, placa,
-                                    new Modelo(descricao),
-                                    new Apolice(numero, dataAtual, dataAtual, situacao, seguradora)
-                            ));
+                    if (clienteEncontrado != null) {
+                        VeiculoSegurado veiculo = new VeiculoSegurado(
+                                kilometragem,
+                                placa,
+                                new Modelo(descricao),
+                                new Apolice(numero, dataAtual, dataAtual, situacao, seguradora)
+                        );
+                        clienteEncontrado.getVeiculoSegurado().add(veiculo);
+                    }
 
                     break;
 
@@ -111,13 +128,12 @@ public class Programa {
 
                     System.out.print("Digite o telefone: ");
                     String telefone = sc.nextLine();
-                    
-                    
+
                     System.out.print("Quantos veículos deseja cadastrar? ");
                     int qtd = sc.nextInt();
-                    
+
                     if (qtd != 0) {
-                    listaDeClientes.add(new Cliente(endereco, telefone, listaDeVeiculoSegurados, nome, dataAtual));
+                        listaDeClientes.add(new Cliente(endereco, telefone, listaDeVeiculoSegurados, nome, dataAtual));
                         for (int i = 0; i < qtd; i++) {
 
                             System.out.println("==DADOS SOBRE O VEÍCULO==");
@@ -159,7 +175,6 @@ public class Programa {
                                     new Modelo(descricao),
                                     new Apolice(numero, dataAtual, dataAtual, situacao, seguradora)));
 
-                            
                         }
                     } else {
                         System.out.println("Você precisa cadastrar um veículo");
@@ -199,7 +214,7 @@ public class Programa {
 
                     System.out.println("========USUÁRIOS CADASTRADOS===========");
                     if (listaDeUsuarios.isEmpty()) {
-                        System.out.println("Nenhum cliente cadastrado");
+                        System.out.println("Nenhum usuário cadastrado");
                     } else {
                         for (Usuario user : listaDeUsuarios) {
                             System.out.println(user.toString());
