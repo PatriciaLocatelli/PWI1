@@ -6,7 +6,7 @@
 	<groupId>PWI1</groupId>
 	<artifactId>PWI1</artifactId>
 	<version>0.0.1</version>
-	<name>Garden</name>
+	<name>PWI1</name>
 	<packaging>war</packaging>
 
 	<properties>
@@ -15,7 +15,7 @@
 
 	<build>
 
-		<finalName>Garden</finalName>
+		<finalName>PWI1</finalName>
 
 		<sourceDirectory>src</sourceDirectory>
 
@@ -88,5 +88,5 @@
 		</dependency>
 
 	</dependencies>
-	<description>Garden</description>
+	<description>PWI1</description>
 </project>
